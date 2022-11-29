@@ -8,16 +8,35 @@ createApp({
                 { text: 'Fare la spesa', done: true }, 
                 { text: 'Fare il bucato', done: false }
             ],
-
-            task: ""
+            task: "",
+            error: false,
+            classChecked: "taskChecked"
         }
     },
     methods:{
 
         addTask(){
+            if (this.task === "" || this.task.length < 5){
+                this.error = true
 
-            this.tasks.push({text: this.task, done: false})
-            console.log(this.tasks);
+            } else{
+                this.tasks.unshift({text: this.task, done: false})
+                this.task = "";
+            }
+        },
+
+        doneTask(i){
+            if (this.tasks[i].done){
+                this.tasks[i].done = false;
+
+            } else{
+                this.tasks[i].done = true;
+
+            }
+        },
+
+        deleteTask(i){
+            this.tasks.splice(i,1)
         }
     }
-}).mount("#app")
+}).mount("#app");

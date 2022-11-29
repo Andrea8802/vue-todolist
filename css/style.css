@@ -1,0 +1,11 @@
+li{
+    display: flex;
+    justify-content: space-between;
+}
+ul{
+    width: 10%;
+}
+
+.taskChecked{
+    text-decoration: line-through;
+}
