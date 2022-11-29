@@ -25,16 +25,6 @@ createApp({
             }
         },
 
-        doneTask(i){
-            if (this.tasks[i].done){
-                this.tasks[i].done = false;
-
-            } else{
-                this.tasks[i].done = true;
-
-            }
-        },
-
         deleteTask(i){
             this.tasks.splice(i,1)
         }
