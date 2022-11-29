@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- File CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- CDN Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <title>ToDoList</title>
+</head>
+<body>
+
+    <div id="app" class="container">
+
+        <!-- Caricamento pagina -->
+        <div v-if="pageLoaded">
+            <!-- Header -->
+            <header>
+                <!-- Logo e titolo -->
+                <img :src="imgLogo" alt="Logo" class="logo">
+                <h1>ToDoList</h1>
+
+            </header>
+
+            <main>
+                <!-- Sezione Input -->
+                    <input type="text" placeholder="Inserisci testo" v-model="task" @KeyUp.enter="addTask">
+                    <button @click="addTask">Aggiungi</button>
+
+                    <!-- Sistema Errore -->
+                    <div class="container-error">
+                        <div class="error" v-if="error">
+                            ERRORE
+                        </div>
+                    </div>
+                    
+                    <!-- Lista -->
+                    <ul>
+                        
+                        <li v-for="(task, index) in tasks">
+
+                            <div class="container-check">
+                                <i :class="tasks[index].done ? taskDone : '' " class="fa-solid fa-check" @click="doneTask(index)"></i>
+                            </div>
+
+                            <div :class="tasks[index].done ? classChecked : '' ">
+                                {{task.text}}
+                            </div>
+
+                            <div class="container-delete">
+                                <i class="fa-solid fa-trash" @click="deleteTask(index)"></i>
+                            </div>
+                            
+                        </li>
+                    </ul>
+            </main>
+        </div>
+
+        <!-- Pagina di caricamento -->
+        <div class="page-loading" v-else>
+            Caricamento in corso...
+            <div class="loading">
+                <i class="fa-solid fa-circle-notch"></i>
+            </div>
+        </div>
+    </div>
+
+        
+        
+    
+    <!-- Vue.js script & Main Script -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+</body>
+</html>

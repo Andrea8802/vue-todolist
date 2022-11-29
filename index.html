@@ -14,11 +14,14 @@
     <div id="app">
         <input type="text" placeholder="Inserisci testo" v-model="task" @KeyUp.enter="addTask">
         <button @click="addTask">Aggiungi</button>
-        <div v-if="error">
+        <div v-if="error" class="error">
             Errore
         </div>
         <ul>
             <li v-for="(task, index) in tasks">
+                <div>
+                    <i class="fa-solid fa-angles-right"></i>
+                </div>
                 <div>
                     {{task.text}}
                 </div>

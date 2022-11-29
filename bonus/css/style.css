@@ -1,0 +1,155 @@
+/* General Rules */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+/* Header Rules */
+.logo{
+    width: 30%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h1{
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+/* Main Rules */
+
+/* Input */
+input{
+    width: 280px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 0 10px;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+    input:focus{
+        border: 3px solid black;
+        outline: none;
+        
+    }
+
+button{
+    height: 50px;
+    padding: 0 20px;
+    border: none;
+    background-color: transparent;
+    border: 3px solid black;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+    button:hover{
+        background-color: lightgray;
+    }
+
+/* Sistema Errore */
+.container-error{
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error{
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+/* Lista */
+
+ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin-bottom: 50px;
+}
+
+li{
+    display: flex;
+    justify-content: space-around;
+    font-size: 24px;
+    gap: 10px;
+}
+
+li i{
+    cursor: pointer;
+}
+
+.container-delete{
+    color: gray;
+
+}
+
+.container-delete:hover{
+    color: black;
+}
+
+/* Check List */
+
+.taskChecked{
+    text-decoration: line-through;
+}
+
+.container-check{
+    width: 30px;
+    height: 30px;
+}
+
+.container-check i:hover{
+    border: 3px solid green;
+    border-radius: 50%;
+}
+
+.taskDone{
+    color: green;
+    border: 3px solid green;
+    border-radius: 50%;
+}
+
+/* Caricamento */
+.page-loading{
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: 100vh;
+}
+
+.loading{
+    font-size: 60px;
+    animation: loading 1.3s linear infinite reverse;
+}
+
+@keyframes loading {
+    0%{
+        transform: rotate(360deg);
+    }
+}
