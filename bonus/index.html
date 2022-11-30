@@ -42,6 +42,12 @@
                     <!-- Lista -->
                     <ul>
                         
+                        <!-- Compare se non ci sono task -->
+                        <div class="empity-list" v-if="tasks.length === 0">
+                            Non ci sono task!
+                            <i class="fa-regular fa-face-surprise"></i>
+                        </div>
+
                         <li v-for="(task, index) in tasks">
 
                             <div class="container-check">

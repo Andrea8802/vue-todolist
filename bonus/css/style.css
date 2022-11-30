@@ -93,7 +93,7 @@ ul{
 li{
     display: flex;
     justify-content: space-around;
-    font-size: 24px;
+    font-size: 28px;
     gap: 10px;
 }
 
@@ -103,11 +103,22 @@ li i{
 
 .container-delete{
     color: gray;
+    opacity: 0;
+    height: 30px;
+    width: 30px;
 
+}
+
+li:hover .container-delete{
+    opacity: 1;
 }
 
 .container-delete:hover{
     color: black;
+}
+
+.empity-list{
+    font-size: 28px;
 }
 
 /* Check List */
